@@ -23,6 +23,8 @@ Laravel 5.5 scaffolding with:
 * FontAwesome
 * & more
 
+## Useful Links
+
 * Repo: https://github.com/kjdion84/owl
 * Demo: http://owldemo.kjdion.com
 * Videos: https://www.youtube.com/channel/UCeYkrwYJ2WY4ABSU0bAl2cg
