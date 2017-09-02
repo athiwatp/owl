@@ -23,8 +23,6 @@ Laravel 5.5 scaffolding with:
 * FontAwesome
 * & more
 
-Owl is Laravel 5.5 front & backend scaffolding with CRUD generator, auth, roles, permissions, settings, contact form, recaptcha, activity log, demo mode, user timezones, AJAX CRUD/validation, Bootstrap 4, DataTables, & more!
-
 * Repo: https://github.com/kjdion84/owl
 * Demo: http://owldemo.kjdion.com
 * Videos: https://www.youtube.com/channel/UCeYkrwYJ2WY4ABSU0bAl2cg
