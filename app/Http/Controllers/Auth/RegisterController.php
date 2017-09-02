@@ -34,7 +34,7 @@ class RegisterController extends Controller
 
     protected function registered()
     {
-        activity()->by(auth()->user())->withProperties(request()->except(['_token', 'password', 'password_confirmation']))->log('Registered Account');
+        activity()->by(auth()->user())->withProperties(request()->except(['_token', 'password', 'password_confirmation', 'g-recaptcha-response']))->log('Registered Account');
         request()->session()->flash('flash', ['success', 'Account registered!']);
 
         return response()->json(['redirect' => route('index')]);
