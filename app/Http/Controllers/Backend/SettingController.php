@@ -20,7 +20,8 @@ class SettingController extends Controller
         ]);
 
         foreach (request()->except('_token') as $key => $value) {
-            Setting::where('key', $key)->update(['value' => $value]);
+            $setting = Setting::where('key', $key)->first();
+            $setting->update(['value' => $value]);
         }
 
         activity()->by(auth()->user())->withProperties(request()->except('_token'))->log('Updated Settings');
