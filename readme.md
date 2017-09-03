@@ -35,8 +35,8 @@ Laravel 5.5 scaffolding with:
 3. Create database with `utf8mb4_unicode_ci` collation
 4. Create SMTP server
 5. Create and edit `.env` file using `.env.example` as an example
-6. Run `php artisan key:generate` to generate a new key
 7. Run `composer update`
+6. Run `php artisan key:generate` to generate a new key
 8. Run `php artisan migrate`
 
 Now you can visit the app URL in your browser and login with:
