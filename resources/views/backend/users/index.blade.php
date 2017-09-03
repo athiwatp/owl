@@ -14,7 +14,7 @@
             <tr>
                 <th>Name</th>
                 <th>Email</th>
-                <th>Role</th>
+                <th>Roles</th>
                 <th class="actions">Actions</th>
             </tr>
             </thead>
@@ -30,7 +30,7 @@
                 columns: [
                     { data: 'name' },
                     { data: 'email' },
-                    { data: 'role' },
+                    { data: 'roles' },
                     {
                         render: function (data, type, full) {
                             var actions = '';

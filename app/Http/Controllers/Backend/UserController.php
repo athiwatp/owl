@@ -18,8 +18,8 @@ class UserController extends Controller
     public function indexDatatable()
     {
         $datatable = DataTables::of(User::with('roles')->get());
-        $datatable->editColumn('role', function ($user) {
-            return ($user->roles->first()) ? $user->roles->first()->name : null;
+        $datatable->editColumn('roles', function ($user) {
+            return $user->roles->pluck('name')->implode(', ');
         });
 
         return $datatable;
@@ -39,13 +39,12 @@ class UserController extends Controller
             'email' => 'required|string|email|max:255|unique:users',
             'timezone' => 'required|in:'.implode(',', timezone_identifiers_list()),
             'password' => 'required|string|min:6|confirmed',
-            'role' => 'required|exists:roles,name',
         ]);
 
         request()->merge(['password' => bcrypt(request()->input('password'))]);
 
         $user = User::create(request()->all());
-        $user->syncRoles([request()->input('role')]);
+        $user->syncRoles([request()->input('roles', [])]);
 
         activity()->by(auth()->user())->on($user)->withProperties(request()->except(['_token', 'password', 'password_confirmation']))->log('Created User');
 
@@ -70,12 +69,11 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,'.$id,
             'timezone' => 'required|in:'.implode(',', timezone_identifiers_list()),
-            'role' => 'required|exists:roles,name',
         ]);
 
         $user = User::findOrFail($id);
         $user->update(request()->all());
-        $user->syncRoles([request()->input('role')]);
+        $user->syncRoles([request()->input('roles', [])]);
 
         activity()->by(auth()->user())->on($user)->withProperties(request()->except('_token'))->log('Updated User Profile');
 

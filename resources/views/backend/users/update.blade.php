@@ -26,12 +26,20 @@
             </div>
 
             <div class="form-group">
-                <label for="role">Role</label>
-                <select name="role" id="role" class="form-control">
-                    @foreach ($roles as $role)
-                        <option value="{{ $role->name }}"{{ $user->hasRole($role->name) ? ' selected' : '' }}>{{ $role->name }}</option>
-                    @endforeach
-                </select>
+                <div class="form-check">
+                    <label class="form-check-label">
+                        <input type="checkbox" class="form-check-input" data-check="roles[]">
+                        Roles
+                    </label>
+                </div>
+                @foreach ($roles as $role)
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input type="checkbox" name="roles[]" class="form-check-input" value="{{ $role->name }}"{{ $user->hasRole($role->name) ? ' checked' : '' }}>
+                            {{ $role->name }}
+                        </label>
+                    </div>
+                @endforeach
             </div>
         </div>
 

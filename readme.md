@@ -53,7 +53,7 @@ You can enable/disable the core scaffolding features inside of `config/owl.php`:
 * `allow.frontend`: enable/disable the frontend.
 * `allow.registration`: enable/disable user registration.
 * `allow.contact`: enable/disable the contact form.
-* `demo`: enable/disable demo mode (disables CRUD methods via model events; see `app/Traits/Owl.php` code).
+* `demo`: enable/disable demo mode
 
 There are also additional settings stored in the database, allowing for dynamic app settings to be created/managed with ease. Access these settings using `config('settings.key')`.
 

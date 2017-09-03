@@ -26,6 +26,11 @@ $(document).ready(function () {
         selector: '[data-toggle="tooltip"]'
     });
 
+    // hide tooltips on ajax complete
+    $(document).ajaxComplete(function () {
+        $('.tooltip').tooltip('hide');
+    });
+
     // ajax form processing
     $(document).on('submit', 'form', function (event) {
         event.preventDefault();

@@ -12,12 +12,12 @@
             </div>
 
             <div class="form-group">
-                <div class="form-check float-right">
+                <div class="form-check">
                     <label class="form-check-label">
-                        <input type="checkbox" class="form-check-input" data-check="permissions[]"> Check All
+                        <input type="checkbox" class="form-check-input" data-check="permissions[]">
+                        Permissions
                     </label>
                 </div>
-                <label for="name">Permissions</label>
                 <ul class="list-group list-group-hover">
                     @foreach ($group_permissions as $group => $permissions)
                         <li class="list-group-item">
