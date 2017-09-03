@@ -19,7 +19,7 @@ class UserController extends Controller
     {
         $datatable = DataTables::of(User::with('roles')->get());
         $datatable->editColumn('roles', function ($user) {
-            return $user->roles->pluck('name')->implode(', ');
+            return $user->roles->sortBy('name')->pluck('name')->implode(', ');
         });
 
         return $datatable;
