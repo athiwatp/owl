@@ -27,6 +27,7 @@ Laravel 5.5 scaffolding with:
 
 * Repo: https://github.com/kjdion84/owl
 * Demo: http://owldemo.kjdion.com (admin@example.com/admin123)
+* Videos: https://www.youtube.com/channel/UCeYkrwYJ2WY4ABSU0bAl2cg
 
 # Installation
 
