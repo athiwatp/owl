@@ -6,7 +6,7 @@
         <h1 class="display-5 mt-4 mb-4">@yield('title')</h1>
 
         @if (config('owl.demo'))
-            <p class="text-danger"><b>Warning:</b> app is currently in demo mode, some functions will not work.</p>
+            <p class="text-danger"><b>Warning:</b> app is currently in demo mode, some features are disabled.</p>
         @endif
 
         <form method="POST" action="{{ route('login') }}" novalidate>

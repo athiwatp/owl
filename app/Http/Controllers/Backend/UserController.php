@@ -88,6 +88,10 @@ class UserController extends Controller
 
     public function delete()
     {
+        $this->validate(request(), [
+            'id' => 'required',
+        ]);
+
         $user = User::findOrFail(request()->input('id'));
         $user->makeHidden(['created_at', 'updated_at', 'deleted_at']);
         $user->delete();

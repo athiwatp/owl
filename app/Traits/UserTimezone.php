@@ -4,24 +4,8 @@ namespace App\Traits;
 
 use Carbon\Carbon;
 
-trait Owl
+trait UserTimezone
 {
-    // stop events if in demo mode
-    public static function bootOwl()
-    {
-        static::creating(function () {
-            return !config('owl.demo');
-        });
-
-        static::updating(function () {
-            return !config('owl.demo');
-        });
-
-        static::deleting(function () {
-            return !config('owl.demo');
-        });
-    }
-
     // access user timezone if logged in
     public function getCreatedAtAttribute($value)
     {

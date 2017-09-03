@@ -2,12 +2,12 @@
 
 namespace App;
 
-use App\Traits\Owl;
+use App\Traits\UserTimezone;
 use Illuminate\Database\Eloquent\Model;
 
 class crud_model_class extends Model
 {
-    use Owl;
+    use UserTimezone;
 
     /* crud_fillable */
 }

@@ -73,6 +73,10 @@ class RoleController extends Controller
 
     public function delete()
     {
+        $this->validate(request(), [
+            'id' => 'required',
+        ]);
+
         $role = Role::findOrFail(request()->input('id'));
         $role->makeHidden(['created_at', 'updated_at', 'deleted_at']);
         $role->delete();

@@ -2,9 +2,9 @@
 
 namespace App;
 
-use App\Traits\Owl;
+use App\Traits\UserTimezone;
 
 class Permission extends \Spatie\Permission\Models\Permission
 {
-    use Owl;
+    use UserTimezone;
 }

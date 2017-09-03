@@ -67,6 +67,10 @@ class crud_model_classController extends Controller
 
     public function delete()
     {
+        $this->validate(request(), [
+            'id' => 'required',
+        ]);
+
         $crud_model_variable = crud_model_class::findOrFail(request()->input('id'));
         $crud_model_variable->makeHidden(['created_at', 'updated_at', 'deleted_at']);
         $crud_model_variable->delete();

@@ -2,9 +2,9 @@
 
 namespace App;
 
-use App\Traits\Owl;
+use App\Traits\UserTimezone;
 
 class Activity extends \Spatie\Activitylog\Models\Activity
 {
-    use Owl;
+    use UserTimezone;
 }
